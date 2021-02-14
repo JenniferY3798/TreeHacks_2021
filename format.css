@@ -98,3 +98,17 @@ body{
     font-size:30px;
     text-align:center;
 }
+
+p{
+    background-color: #C1C1C1;
+    border-radius: 5px;
+}
+
+button{
+    width:250px;
+    height:40px;
+    background-color: #C1C1C1;
+    border-radius: 5px;
+    font-size: 20px;
+    border-color:#C1C1C1;
+}
