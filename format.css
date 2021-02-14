@@ -62,7 +62,7 @@
 
 .sub-header-name-column{
     display:block;
-    position:relative;
+    position:absolute;
     top:200px;
     left:15%;
     font-size:30px;
@@ -71,9 +71,30 @@
 
 .sub-header-unit-column{
     display:block;
-    position:relative;
+    position:absolute;
     top:200px;
-    left:200px;
+    float:right;
+    right:20%;
     font-size:30px;
     text-align: right;
+}
+
+.name-column{
+    display:block;
+    position:absolute;
+    top:120px;
+    float:left;
+    left:20%;
+    font-size:30px;
+    text-align:center;
+}
+
+.pic-column{
+    display:block;
+    position:absolute;
+    top:120px;
+    float:left;
+    right:20%;
+    font-size:30px;
+    text-align:center;
 }
