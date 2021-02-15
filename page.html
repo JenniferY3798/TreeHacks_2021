@@ -43,7 +43,7 @@
           <div class="name-column">
             <p>Power</p>
             <form action="">
-              <input type="text" id="power" name="Power Number" value="Number" size="15px">
+              <input type="text" id="power" name="Power Number" value="0" size="15px">
               <select name="Power Unit">
                 <option value="Watts" selected>W</option>
                 <option value="Kilowatts">kW</option>
@@ -52,7 +52,7 @@
             </form>
             <p>Resistance</p>
             <form action="">
-              <input type="text" id="resistance" name="Resistance Number" value="Number" size="15px">
+              <input type="text" id="resistance" name="Resistance Number" value="0" size="15px">
               <select name="Resistance Unit">
                 <option value="Ohms" selected>&#8486</option>
                 <option value="Kiloohms">k&#8486</option>
@@ -61,7 +61,7 @@
             </form>
             <p>Voltage</p>
             <form action="">
-              <input type="text" id="voltage" name="Voltage Number" value="Number" size="15px">
+              <input type="text" id="voltage" name="Voltage Number" value="0" size="15px">
               <select name="Voltage Unit">
                 <option value="Volts" selected>V</option>
                 <option value="Kilovolts">kV</option>
@@ -70,7 +70,7 @@
             </form>
             <p>Current</p>
             <form action="">
-              <input type="text" id="current" name="Current Number" value="Number" size="15px">
+              <input type="text" id="current" name="Current Number" value="0" size="15px">
               <select name="Current Unit">
                 <option value="Amperes" selected>A</option>
                 <option value="Kiloampere">kA</option>
@@ -90,20 +90,10 @@
 
   <script>
     function myFuncrion(){
-      var p = docuemnt.getElementById("power").value;
-      var r = document.getElementById("resistance").value;
-      var v = document.getElementById("voltage").value;
-      var i = document.getElementById("current").value;
-      
-      p = p+1;
-      r = r+1;
-      v = v+1;
-      i = i+1;
-
-      document.getElementById("power").value = p;
-      document.getElementById("resistance").value = r;
-      document.getElementById("voltage").value = v;
-      document.getElementById("current").value = i;
+      document.getElementById("power").value = "12";
+      document.getElementById("resistance").value = "13";
+      document.getElementById("voltage").value = "14";
+      document.getElementById("current").value = "15";
     }
   </script>
 
