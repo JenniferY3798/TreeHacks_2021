@@ -23,6 +23,67 @@ function getCurrent(){
     return i; 
 }
 
+function convertP(p){
+    if(p >= 1000){
+        p = p / 1000;
+        document.getElementById("Power Unit").value = "Kilowatts";
+    }
+    else if(p < 1){
+        p = p * 1000;
+        document.getElementById("Power Unit").value = "milliwatts";
+    }
+    else{
+        document.getElementById("Power Unit").value = "Watts";
+    }
+    return p;
+}
+
+function convertR(r){
+    if(r >= 1000){
+        r = r / 1000;
+        document.getElementById("Resistance Unit").value = "Kiloohms";
+    }
+    else if(r < 1){
+        r = r * 1000;
+        document.getElementById("Resistance Unit").value = "Milliohms";
+    }
+    else{
+        document.getElementById("Resistance Unit").value = "Ohms";
+    }
+    return r;
+}
+
+function convertV(v){
+    if(v >= 1000){
+        v = v / 1000;
+        document.getElementById("Voltage Unit").value = "Kilovolts";
+    }
+    else if(v < 1){
+        v = v * 1000;
+        document.getElementById("Voltage Unit").value = "Millivolts";
+    }
+    else{
+        document.getElementById("Voltage Unit").value = "Volts";
+    }
+    return v;
+}
+
+function convertI(i){
+    if(i >= 1000){
+        i = i / 1000;
+        document.getElementById("Current Unit").value = "Kiloampere";
+    }
+    else if(i < 1){
+        i = i * 1000;
+        document.getElementById("Current Unit").value = "Milliampere";
+    }
+    else{
+        document.getElementById("Current Unit").value = "Amperes";
+    }
+    return i;
+}
+
+
 function calculate(){
     // Initialized of the variables as number
     var p = -1;
@@ -62,6 +123,9 @@ function calculate(){
         v = Math.sqrt(p * r);
         i = Math.sqrt(p / r);
 
+        v = convertV(v);
+        i = convertI(i);
+
         document.getElementById('voltage').value = v;
         document.getElementById('current').value = i;
     }
@@ -84,6 +148,9 @@ function calculate(){
         
         r = v * v / p;
         i = p / v;
+
+        r = convertR(r);
+        i = convertI(i);
         
         document.getElementById('resistance').value = r;
         document.getElementById('current').value = i;
@@ -108,6 +175,9 @@ function calculate(){
         r = p / (i * i);
         v = p / i;
 
+        r = convertR(r);
+        v = convertV(v);
+
         document.getElementById('resistance').value = r;
         document.getElementById('voltage').value = v;
     }
@@ -130,6 +200,9 @@ function calculate(){
         
         p = v * v / r;
         i = v / r;
+
+        p = convertP(p);
+        i = convertI(i);
         
         document.getElementById('power').value = p;
         document.getElementById('current').value = i;
@@ -154,6 +227,9 @@ function calculate(){
         p = i * i * r;
         v = i * r;
 
+        p = convertP(p);
+        v = convertV(v);
+
         document.getElementById('power').value = p;
         document.getElementById('voltage').value = v;
     }
@@ -177,6 +253,9 @@ function calculate(){
         p = v * i;
         r = v / i;
 
+        p = convertP(p);
+        r = convertR(r);
+
         document.getElementById('power').value = p;
         document.getElementById('resistance').value = r;
     }
@@ -187,4 +266,8 @@ function reset(){
     document.getElementById('resistance').value = 0;
     document.getElementById('voltage').value = 0;
     document.getElementById('current').value = 0;
+    document.getElementById('Power Unit').value = "Watts";
+    document.getElementById('Resistance Unit').value = "Ohms";
+    document.getElementById('Voltage Unit').value = "Volts";
+    document.getElementById('Current Unit').value = "Amperes";
 }
